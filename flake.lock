@@ -122,17 +122,17 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1790755814,
-        "narHash": "sha256-WkG4jk2yNqDweyNC1zkDDnvqdqHGXOmr74RQTqgaAZA=",
-        "ref": "refs/heads/main",
-        "rev": "ec5e0e88fd0746a53641924dba1a0230dd799874",
-        "revCount": 503,
-        "type": "git",
-        "url": "file:///home/david/dev/goad"
+        "lastModified": 1790817641,
+        "narHash": "sha256-W7WdgF3SVHlGVpURNiRoVr4Dv+yb3m9QniQMTLjMaJ8=",
+        "owner": "davidlee",
+        "repo": "goad",
+        "rev": "68f8ec4fdb2b479dcd22028a2398dbe9ae532b8b",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/david/dev/goad"
+        "owner": "davidlee",
+        "repo": "goad",
+        "type": "github"
       }
     },
     "jail-nix": {

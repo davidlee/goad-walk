@@ -3,7 +3,8 @@
 
   # The capsule clones this repo, not goad's, so a walking agent sees the kit
   # and the binaries and nothing else of goad. See goad docs/slices/012.
-  inputs.goad.url = "git+file:///home/david/dev/goad";
+  # inputs.goad.url = "git+file:///home/david/dev/goad";
+  inputs.goad.url = "github:davidlee/goad";
 
   outputs = {goad, ...}: let
     system = "x86_64-linux";
@@ -13,11 +14,13 @@
     pending = name: g.${name} or null;
     goadPkgs = builtins.filter (p: p != null) [g.goad g.goad-emit (pending "goad-check") (pending "goad-kit")];
   in {
-    packages.${system} = {
-      default = pkgs.buildEnv {
-        name = "goad-walk-tools";
-        paths = goadPkgs ++ [pkgs.ruby pkgs.jq];
-      };
-    } // pkgs.lib.optionalAttrs (g ? goad-kit) {inherit (g) goad-kit;};
+    packages.${system} =
+      {
+        default = pkgs.buildEnv {
+          name = "goad-walk-tools";
+          paths = goadPkgs ++ [pkgs.ruby pkgs.jq];
+        };
+      }
+      // pkgs.lib.optionalAttrs (g ? goad-kit) {inherit (g) goad-kit;};
   };
 }
